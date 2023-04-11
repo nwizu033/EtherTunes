@@ -15,10 +15,16 @@
 .pd-2 {
   padding-top: 20px;
 }
+.pd-3 {
+  padding-top: 70px;
+}
 .pd-5 {
   padding-top: 150px;
 }
-
+.pd--5 {
+  margin-top: -50;
+  display: flexbox;
+}
 .md-5 {
   margin-top: 0px;
 }
