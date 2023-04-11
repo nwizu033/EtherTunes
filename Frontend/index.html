@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zxx" class="uk-background-white dark:uk-background-gray-100 dark:uk-text-gray-20 uk-dark pd-2">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EtherTunes</title>
+    <meta name="description" content="Web3 Streaming Platform">
+    <meta name="theme-color" content="#741ff5">
+
+    <!-- preload head styles -->
+    <link rel="preload" href="fonts/brand-icons/brand-icons.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/unicons/Unicons.woff?lkolxg" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8.3.2/swiper-bundle.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/uikit@3.15.1/dist/css/uikit.min.css" as="style">
+
+    <!-- include styles -->
+    <script src="js/app-head.js"></script>
+    <link rel="stylesheet" href="css/theme/main.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- include scripts -->
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-components.js"></script>
+</head>
+
+<body class="uni-body">
+
+
+    <!-- Wrapper start -->
+    <div class="wrap">
+
+        <!-- Header start -->
+        <header class="uni-header uk-position-top">
+            <div class="uni-header-navbar"
+                data-uk-sticky="top: 70; show-on-up: false; animation: uk-animation-slide-top"
+                data-anime="opacity:[0, 1]; translateY:[-24, 0]; onview: true; delay: 0;">
+                <div class="uk-container">
+                    <nav class="uk-navbar uk-navbar-container uk-navbar-transparent" data-uk-navbar>
+                        <div class="uk-navbar-top">
+                            <div class="uk-navbar-left">
+                                <a class="uk-logo uk-navbar-item uk-h4 uk-h3@m uk-margin-remove" href="landing-01.html">
+                                    <img class="uk-visible dark:uk-hidden" width="120" src="logo.PNG" alt="EtherTunes"
+                                        loading="lazy"> <img class="uk-hidden dark:uk-visible" width="120"
+                                        src="logo.PNG" alt="EtherTunes" loading="lazy"> </a>
+                            </div>
+
+                            <div class="uk-navbar-right uk-flex-1 uk-flex-right">
+                                <ul class="uk-navbar-nav dark:uk-text-gray-10 uk-visible@m"
+                                    data-uk-scrollspy-nav="closest: li; scroll: true; offset: 80" data-uk-navbar-bound>
+                                    <li><a href="#uni_minting">Music</a></li>
+                                    <li><a href="#uni_about">About</a></li>
+                                    <li><a href="#uni_collection">Ecosystem</a></li>
+                                    <li><a href="#uni_roadmap">Whitepaper</a></li>
+                                    <li><a href="#uni_team">Team</a></li>
+                                </ul>
+
+                                <div class="uk-navbar-item">
+
+
+                                    <!-- header: call to actions -->
+                                    <a href="#uni_connect_wallet"
+                                        class="uk-button uk-button-medium@m uk-button-default uk-button-outline uk-margin-left uk-visible@l"
+                                        data-uk-toggle="">
+                                        <span>Connect wallet</span>
+                                    </a>
+                                </div>
+
+                                <div class="uk-navbar-item uk-hidden@m">
+                                    <a href="#uni_connect_wallet"
+                                        class="uk-button uk-button-medium@m uk-button-icon uk-hidden@m uk-margin-small-right"
+                                        data-uk-toggle="">
+
+                                    </a>
+
+                                    <span class="uk-icon uk-icon-medium material-icons toggle-btn"
+                                        onclick="toggleDropdown()" data-uk-toggle>menu</span>
+                                    <ul class="dropdown" id="dropdown-menu">
+                                        <li><a href="#uni_minting">Music</a></li>
+                                        <li><a href="#uni_about">About</a></li>
+                                        <li><a href="#uni_collection">Ecosystem</a></li>
+                                        <li><a href="#uni_roadmap">Whitepaper</a></li>
+                                        <li><a href="#uni_team">Team</a></li>
+                                    </ul>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                </div>
+                </nav>
+            </div>
+    </div>
+    </header>
+
+    <!-- Header end -->
+
+    <!-- Hero start -->
+
+    <div id="uni_hero" class="uni-hero uk-section uk-section-xlarge uk-padding-remove-bottom uk-panel pd-5">
+        <div class="uk-position-top uk-position-z-index-negative uk-overflow-hidden uk-blend-overlay"
+            data-uk-height-viewport="">
+            <img class="uk-position-top-left uk-position-fixed uk-blur-large" style="left: -4%; top: -4%" width="500"
+                src="images/gradient-circle.svg" alt="Circle">
+            <img class="uk-position-bottom-right uk-position-fixed uk-blur-large" style="right: -4%; bottom: -4%"
+                width="500" src="images/gradient-circle.svg" alt="Circle">
+        </div>
+        <div class="uk-position-top uk-position-z-index-negative" data-uk-height-viewport="">
+            <div class="uk-position-cover uk-background-cover uk-opacity-10 dark:uk-hidden"
+                data-src="images/gradient-01.png" data-uk-img></div>
+            <div class="uk-position-cover uk-background-cover uk-opacity-20 uk-hidden dark:uk-visible"
+                data-src="images/gradient-01.png" data-uk-img></div>
+        </div>
+        <div class="uk-panel uk-position-z-index">
+            <div class="uk-container">
+                <div class="uk-panel">
+                    <div class="uk-grid uk-grid-2xlarge uk-flex-middle uk-flex-between" data-uk-grid
+                        data-uk-height-viewport="offset-top: true; offset-bottom: 20;">
+                        <div class="uk-width-5-12@m">
+                            <div class="uk-panel uk-position-z-index uk-text-center uk-text-left@m"
+                                data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 100;">
+
+                                <img class="uk-position-left" width="16" src="images/objects/circle-01.png" alt="object"
+                                    style="top: 16%; left: -16%"
+                                    data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 420;">
+                                <img class="uk-position-bottom-left" width="24" src="images/objects/circle-03.png"
+                                    alt="object" style="bottom: -16%; left: 16%"
+                                    data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 440;">
+                                <h2 class="uk-h2 uk-heading-d3@m uk-margin-small uk-margin@m">EtherTunes</h2>
+                                <p class="uk-text-xlarge uk-width-xlarge@m uk-text-muted typing-text"></p>
+                                <a href="#"
+                                    class="uk-button uk-button-medium@m uk-button-gradient uk-margin-small-top my-button"
+                                    style="display:none;">
+                                    <span>Stream Music</span>
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="uk-width-6-12@m uk-flex-center">
+                            <div class="uk-panel"
+                                data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 200;">
+
+                                <img class="uk-position-right" width="28" src="images/objects/x.png" alt="object"
+                                    style="top: -4%; right: 16%" data-uk-svg=""
+                                    data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 480;">
+                                <img class="uk-position-right uk-opacity-10" width="300" src="images/blob-dashed.svg"
+                                    alt="Blog dashed" style="top: -10%; right: 16%; fill: transparent" data-uk-svg="">
+                                <svg style="top: -20%;" class="uk-position-right" viewBox="0 0 200 200"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#F796FF"
+                                        d="M47.5,-67.2C55.9,-59.3,53.2,-37.9,56.7,-20.1C60.2,-2.3,69.9,11.8,70.8,27.3C71.7,42.9,63.8,59.9,50.6,64.4C37.3,68.9,18.6,60.8,-0.3,61.2C-19.3,61.6,-38.6,70.7,-53.5,66.7C-68.4,62.8,-78.9,45.9,-78.8,29.5C-78.7,13.2,-67.9,-2.7,-59.8,-16.8C-51.6,-31,-46,-43.3,-36.5,-50.9C-27,-58.4,-13.5,-61.1,3,-65.2C19.6,-69.4,39.1,-75.1,47.5,-67.2Z"
+                                        transform="translate(100 100)">
+                                </svg>
+
+                                <div class="uk-margin-large-top">
+                                    <div
+                                        class="uni-item uk-card uk-overflow-hidden uk-radius uk-radius-large@m uk-box-shadow-hover-medium uk-visible-toggle uk-transition-toggle uk-box-shadow-medium uk-background-white dark:uk-background-white-5">
+                                        <div class="uni-item-featured-image uk-panel uk-flex-middle uk-flex-center">
+                                            <div class="uk-panel uk-image-middle">
+                                                <video autoplay muted loop playsinline src="video.mp4" alt="Artwork"
+                                                    class="uk-radius-small uk-radius-large@m">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Hero end -->
+
+    <!-- brands start -->
+    <div class="uni-brands uk-padding-3xlarge-top uk-padding-medium-bottom"
+        data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 300;">
+        <div class="uk-container uk-container-small">
+            <div class="uk-panel uk-text-center dark:uk-text-white">
+                <header class="uk-panel uk-flex-center uk-flex-middle uk-text-center">
+                    <span class="uk-text-overline uk-text-bold uk-text-muted">Partners</span>
+                </header>
+                <div class="uk-grid uk-grid-xlarge@m uk-child-width-1-2 uk-child-width-expand@m uk-flex-middle uk-flex-center uk-grid uk-margin-medium-top"
+                    data-uk-grid>
+
+                    <div><img class="uk-width-xsmall" src="bunzz.png" alt="bunzz" data-uk-svg></div>
+                    <div><img class="uk-width-xsmall" src="web3afrika.JPG" alt="web3afrika" data-uk-svg></div>
+                    <div><img class="uk-width-xsmall" src="chainideco.png" alt="chainideco" data-uk-svg></div>
+                    <!-- <div><img class="uk-width-xsmall" src="bunzz.png" alt="Exodus" data-uk-svg></div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- brands end -->
+
+    <img class="uk-width-2xsmall uk-flex-center uk-margin-auto uk-margin-medium uk-margin-large@m"
+        src="images/divider-01.svg" alt="Divider" data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 100;">
+
+</body>
+<script src="js/script.js"></script>
+
+</html>
