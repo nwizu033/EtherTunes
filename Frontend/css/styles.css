@@ -59,3 +59,5 @@
 .dropdown li:last-child {
   border-bottom: none;
 } */
+
+.my-button {border-radius: 12px;}
