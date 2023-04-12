@@ -24,7 +24,7 @@ const myButton = document.querySelector(".my-button");
 
 setTimeout(() => {
   myButton.style.display = "";
-}, 2500);
+}, 3000);
 
 function toggleDropdown() {
   var dropdownMenu = document.getElementById("dropdown-menu");
