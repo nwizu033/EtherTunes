@@ -89,3 +89,17 @@
   border-radius: 12px;
   background-color: #751ff5;
 }
+
+.buy-btn {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  color: #fff;
+  border: #000 1px solid;
+  border-radius: 12px;
+  background-color: #751ff5;
+}
+
+.ml-2 {
+  margin-left: 20px;
+}
