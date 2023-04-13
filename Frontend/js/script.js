@@ -41,11 +41,14 @@ window.onclick = function (event) {
   if (!event.target.matches(".toggle-btn")) {
     dropdownMenu.style.display = "none";
   }
-};
-// Get an array of audio elements and player controls
+}; // Get an array of audio elements and player controls
 var audioElements = document.getElementsByClassName("my-audio");
 var playBtns = document.getElementsByClassName("play-btn");
 var pauseBtns = document.getElementsByClassName("pause-btn");
+
+var currentAudio = null;
+var currentPlayBtn = null;
+var currentPauseBtn = null;
 
 // Loop through each audio element and add event listeners to its player controls
 for (var i = 0; i < audioElements.length; i++) {
@@ -55,6 +58,16 @@ for (var i = 0; i < audioElements.length; i++) {
     var pauseBtn = pauseBtns[i];
 
     playBtn.addEventListener("click", function () {
+      if (currentAudio !== null && currentAudio !== audio) {
+        currentAudio.pause();
+        currentPlayBtn.style.display = "inline-block";
+        currentPauseBtn.style.display = "none";
+      }
+
+      currentAudio = audio;
+      currentPlayBtn = playBtn;
+      currentPauseBtn = pauseBtn;
+
       audio.play();
       playBtn.style.display = "none"; // Hide the play button
       pauseBtn.style.display = "inline-block"; // Show the pause button
