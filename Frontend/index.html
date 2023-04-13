@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zxx" class="uk-background-white dark:uk-background-gray-100 dark:uk-text-gray-20 uk-dark pd-2">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EtherTunes</title>
+    <meta name="description" content="Web3 Streaming Platform">
+    <meta name="theme-color" content="#741ff5">
+
+    <!-- preload head styles -->
+    <link rel="preload" href="fonts/brand-icons/brand-icons.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/unicons/Unicons.woff?lkolxg" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8.3.2/swiper-bundle.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/uikit@3.15.1/dist/css/uikit.min.css" as="style">
+
+    <!-- include styles -->
+    <script src="js/app-head.js"></script>
+    <link rel="stylesheet" href="css/theme/main.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- include scripts -->
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-components.js"></script>
+    <script src="https://kit.fontawesome.com/1df8677007.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+</head>
+
+<body class="uni-body">
+
+
+    <!-- Wrapper start -->
+    <div class="wrap">
+
+        <!-- Header start -->
+        <header class="uni-header uk-position-top">
+            <div class="uni-header-navbar"
+                data-uk-sticky="top: 70; show-on-up: false; animation: uk-animation-slide-top"
+                data-anime="opacity:[0, 1]; translateY:[-24, 0]; onview: true; delay: 0;">
+                <div class="uk-container">
+                    <nav class="uk-navbar uk-navbar-container uk-navbar-transparent" data-uk-navbar>
+                        <div class="uk-navbar-top">
+                            <div class="uk-navbar-left">
+                                <a class="uk-logo uk-navbar-item uk-h4 uk-h3@m uk-margin-remove" href="landing-01.html">
+                                    <img class="uk-visible dark:uk-hidden" width="120" src="logo.PNG" alt="EtherTunes"
+                                        loading="lazy"> <img class="uk-hidden dark:uk-visible" width="120"
+                                        src="logo.PNG" alt="EtherTunes" loading="lazy"> </a>
+                            </div>
+
+                            <div class="uk-navbar-right uk-flex-1 uk-flex-right">
+                                <ul class="uk-navbar-nav dark:uk-text-gray-10 uk-visible@m"
+                                    data-uk-scrollspy-nav="closest: li; scroll: true; offset: 80" data-uk-navbar-bound>
+                                    <li><a href="#uni_minting">Music</a></li>
+                                    <li><a href="#uni_about">About</a></li>
+                                    <li><a href="#uni_collection">Ecosystem</a></li>
+                                    <li><a href="#uni_roadmap">Whitepaper</a></li>
+                                    <li><a href="#uni_team">Team</a></li>
+                                </ul>
+
+                                <div class="uk-navbar-item">
+
+
+                                    <!-- header: call to actions -->
+                                    <a href="#uni_connect_wallet"
+                                        class="uk-button uk-button-medium@m uk-button-default uk-button-outline uk-margin-left uk-visible@l my-button"
+                                        data-uk-toggle="">
+                                        <span>Connect wallet</span>
+                                    </a>
+                                </div>
+
+                                <div class="uk-navbar-item uk-hidden@m">
+                                    <a href="#uni_connect_wallet"
+                                        class="uk-button uk-button-medium@m uk-button-icon uk-hidden@m uk-margin-small-right"
+                                        data-uk-toggle="">
+
+                                    </a>
+
+                                    <span class="uk-icon uk-icon-medium material-icons toggle-btn"
+                                        onclick="toggleDropdown()" data-uk-toggle>menu</span>
+                                    <ul class="dropdown" id="dropdown-menu">
+                                        <li><a href="#uni_minting">Music</a></li>
+                                        <li><a href="#uni_about">About</a></li>
+                                        <li><a href="#uni_collection">Ecosystem</a></li>
+                                        <li><a href="#uni_roadmap">Whitepaper</a></li>
+                                        <li><a href="#uni_team">Team</a></li>
+                                    </ul>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                </div>
+                </nav>
+            </div>
+    </div>
+    </header>
+
+    <!-- Header end -->
+
+    <!-- Hero start -->
+
+    <div id="uni_hero" class="uni-hero uk-section uk-section-xlarge uk-padding-remove-bottom uk-panel pd-5">
+        <div class="uk-position-top uk-position-z-index-negative uk-overflow-hidden uk-blend-overlay"
+            data-uk-height-viewport="">
+            <img class="uk-position-top-left uk-position-fixed uk-blur-large" style="left: -4%; top: -4%" width="500"
+                src="images/gradient-circle.svg" alt="Circle">
+            <img class="uk-position-bottom-right uk-position-fixed uk-blur-large" style="right: -4%; bottom: -4%"
+                width="500" src="images/gradient-circle.svg" alt="Circle">
+        </div>
+        <div class="uk-position-top uk-position-z-index-negative" data-uk-height-viewport="">
+            <div class="uk-position-cover uk-background-cover uk-opacity-10 dark:uk-hidden"
+                data-src="images/gradient-01.png" data-uk-img></div>
+            <div class="uk-position-cover uk-background-cover uk-opacity-20 uk-hidden dark:uk-visible"
+                data-src="images/gradient-01.png" data-uk-img></div>
+        </div>
+        <div class="uk-panel uk-position-z-index">
+            <div class="uk-container">
+                <div class="uk-panel">
+                    <div class="uk-grid uk-grid-2xlarge uk-flex-middle uk-flex-between" data-uk-grid
+                        data-uk-height-viewport="offset-top: true; offset-bottom: 20;">
+                        <div class="uk-width-5-12@m">
+                            <div class="uk-panel uk-position-z-index uk-text-center uk-text-left@m"
+                                data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 100;">
+
+                                <img class="uk-position-left" width="16" src="images/objects/circle-01.png" alt="object"
+                                    style="top: 16%; left: -16%"
+                                    data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 420;">
+                                <img class="uk-position-bottom-left" width="24" src="images/objects/circle-03.png"
+                                    alt="object" style="bottom: -16%; left: 16%"
+                                    data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 440;">
+                                <h2 class="uk-h2 uk-heading-d3@m uk-margin-small uk-margin@m">EtherTunes</h2>
+                                <p class="uk-text-xlarge uk-width-xlarge@m uk-text-muted typing-text"></p>
+                                <a href="#"
+                                    class="uk-button uk-button-medium@m uk-button-gradient uk-margin-small-top my-button discover"
+                                    style="display:none;">
+                                    <span>Discover</span>
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="uk-width-6-12@m uk-flex-center pd-2">
+                            <div class="uk-panel"
+                                data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 200;">
+
+                                <img class="uk-position-right" width="28" src="images/objects/x.png" alt="object"
+                                    style="top: -4%; right: 16%" data-uk-svg=""
+                                    data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 480;">
+                                <img class="uk-position-right uk-opacity-10" width="300" src="images/blob-dashed.svg"
+                                    alt="Blog dashed" style="top: -10%; right: 16%; fill: transparent" data-uk-svg="">
+                                <svg style="top: -20%;" class="uk-position-right" viewBox="0 0 200 200"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#F796FF"
+                                        d="M47.5,-67.2C55.9,-59.3,53.2,-37.9,56.7,-20.1C60.2,-2.3,69.9,11.8,70.8,27.3C71.7,42.9,63.8,59.9,50.6,64.4C37.3,68.9,18.6,60.8,-0.3,61.2C-19.3,61.6,-38.6,70.7,-53.5,66.7C-68.4,62.8,-78.9,45.9,-78.8,29.5C-78.7,13.2,-67.9,-2.7,-59.8,-16.8C-51.6,-31,-46,-43.3,-36.5,-50.9C-27,-58.4,-13.5,-61.1,3,-65.2C19.6,-69.4,39.1,-75.1,47.5,-67.2Z"
+                                        transform="translate(100 100)">
+                                </svg>
+
+                                <div class="uk-margin-large-top">
+                                    <div
+                                        class="uni-item uk-card uk-overflow-hidden uk-radius uk-radius-large@m uk-box-shadow-hover-medium uk-visible-toggle uk-transition-toggle uk-box-shadow-medium uk-background-white dark:uk-background-white-5">
+                                        <div class="uni-item-featured-image uk-panel uk-flex-middle uk-flex-center">
+                                            <div class="uk-panel uk-image-middle">
+                                                <video autoplay muted loop playsinline src="video.mp4" alt="Artwork"
+                                                    class="uk-radius-small uk-radius-large@m">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Hero end -->
+
+    <!-- brands start -->
+    <div class="uni-brands uk-padding-3xlarge-top uk-padding-medium-bottom"
+        data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 300;">
+        <div class="uk-container uk-container-small">
+            <div class="uk-panel uk-text-center dark:uk-text-white">
+                <header class="uk-panel uk-flex-center uk-flex-middle uk-text-center">
+                    <span class="uk-text-overline uk-text-bold uk-text-muted">Partners</span>
+                </header>
+                <div class="uk-grid uk-grid-xlarge@m uk-child-width-1-2 uk-child-width-expand@m uk-flex-middle uk-flex-center uk-grid uk-margin-medium-top"
+                    data-uk-grid>
+
+                    <div><img class="uk-width-xsmall" src="bunzz.png" alt="bunzz" data-uk-svg></div>
+                    <div><img class="uk-width-xsmall" src="chainideco.png" alt="chainideco" data-uk-svg></div>
+                    <div><img class="uk-width-xsmall" src="web3afrika.JPG" alt="web3afrika" data-uk-svg></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- brands end -->
+
+    <img class="uk-width-2xsmall uk-flex-center uk-margin-auto uk-margin-medium uk-margin-large@m"
+        src="images/divider-01.svg" alt="Divider" data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 100;">
+
+ <!-- why us start -->
+            <div id="uni_whyus" class="uni-whyus uk-section uk-section-xlarge@m uk-panel">
+                <div class="uk-container">
+                    <header class="uk-grid-xsmall uk-flex-center uk-flex-middle uk-grid" data-uk-grid>
+                        <div class="uk-panel uk-text-center">
+                            <h2 class="uk-h3 uk-h2@s uk-heading-d2@m uk-text-uppercase">Why <span class="uk-text-gradient">choose us?</span></h2>
+                        </div>
+                    </header>
+                    <div class="uk-panel uk-margin-medium-top uk-margin-2xlarge-top@m" data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 300;">
+                        <img class="uk-position-top-left uk-text-primary-40 uni-animation-bounce uk-visible@l" alt="object" width="16" src="images/objects/star-01.svg" style="top: -16%; left: 8%">
+                        <img class="uk-position-bottom-right uk-text-primary-40 uni-animation-bounce uk-visible@l" alt="object" width="24" src="images/objects/star-01.svg" style="bottom: 16%; right: -8%">
+                        <img class="uk-position-bottom-left uk-text-primary-40 uni-animation-bounce uk-visible@l" alt="object" width="28" src="images/objects/star-01.svg" style="bottom: 16%; left: -8%">
+                        <div class="uk-grid uk-grid-large@m uk-grid-match" data-uk-grid="">
+                            <div class="uk-width-4-12@m">
+                                <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-1@m" data-uk-grid="">
+                                    <div>
+                                        <div class="uk-panel uk-card uk-card-small uk-radius-medium uk-radius-large@m uk-border uk-box-shadow-xsmall dark:uk-background-white-5">
+                                            <div class="uk-grid" data-uk-grid="">
+                                                <div class="uk-width-auto">
+                                                    <div class="uk-card uk-card-xsmall uk-radius-medium uk-background-gradient uk-flex-middle uk-flex-center uk-margin-medium-bottom@m">
+                                                        <i class="uk-icon-medium uk-icon-medium@m unicon-wallet uk-text-gray-10"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-panel uk-width-expand@s">
+                                                    <h3 class="uk-h5 uk-text-uppercase">Diverse music selection </h3>
+                                                    <p>Wide range of genres for every taste.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="uk-panel uk-card uk-card-small uk-radius-medium uk-radius-large@m uk-border uk-box-shadow-xsmall dark:uk-background-white-5 md-2">
+                                            <div class="uk-grid" data-uk-grid="">
+                                                <div class="uk-width-auto">
+                                                    <div class="uk-card uk-card-xsmall uk-radius-medium uk-background-gradient uk-flex-middle uk-flex-center uk-margin-medium-bottom@m">
+                                                        <i class="uk-icon-medium uk-icon-medium@m unicon-scalpel-lasso uk-text-gray-10"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-panel uk-width-expand@s">
+                                                    <h3 class="uk-h5 uk-text-uppercase">High-quality audio</h3>
+                                                    <p>Superior sound quality for exceptional listening.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="uk-panel uk-card uk-card-small uk-radius-medium uk-radius-large@m uk-border uk-box-shadow-xsmall dark:uk-background-white-5 md-2">
+                                            <div class="uk-grid" data-uk-grid="">
+                                                <div class="uk-width-auto">
+                                                    <div class="uk-card uk-card-xsmall uk-radius-medium uk-background-gradient uk-flex-middle uk-flex-center uk-margin-medium-bottom@m">
+                                                        <i class="uk-icon-medium uk-icon-medium@m unicon-flash uk-text-gray-10"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-panel uk-width-expand@s">
+                                                    <h3 class="uk-h5 uk-text-uppercase">Transparent royalties</h3>
+                                                    <p>Fair and transparent compensation for artists.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-width-4-12@m">
+                                <div class="uk-panel uk-overflow-hidden uk-flex-middle">
+                               <video autoplay muted loop playsinline src="video.mp4" alt="Artwork"
+                                                    class="uk-radius-small uk-radius-large@m">
+                                </div>
+                            </div>
+                            <div class="uk-width-4-12@m">
+                                <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-1@m" data-uk-grid="">
+                                    <div>
+                                        <div class="uk-panel uk-card uk-card-small uk-radius-medium uk-radius-large@m uk-border uk-box-shadow-xsmall dark:uk-background-white-5">
+                                            <div class="uk-grid" data-uk-grid="">
+                                                <div class="uk-width-auto">
+                                                    <div class="uk-card uk-card-xsmall uk-radius-medium uk-background-gradient uk-flex-middle uk-flex-center uk-margin-medium-bottom@m">
+                                                        <i class="uk-icon-medium uk-icon-medium@m unicon-spray-paint uk-text-gray-10"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-panel uk-width-expand@s">
+                                                    <h3 class="uk-h5 uk-text-uppercase">Exclusive events
+</h3>
+                                                    <p>Access to unique and special performances.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="uk-panel uk-card uk-card-small uk-radius-medium uk-radius-large@m uk-border uk-box-shadow-xsmall dark:uk-background-white-5 md-2">
+                                            <div class="uk-grid" data-uk-grid="">
+                                                <div class="uk-width-auto">
+                                                    <div class="uk-card uk-card-xsmall uk-radius-medium uk-background-gradient uk-flex-middle uk-flex-center uk-margin-medium-bottom@m">
+                                                        <i class="uk-icon-medium uk-icon-medium@m unicon-gamification uk-text-gray-10"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-panel uk-width-expand@s">
+                                                    <h3 class="uk-h5 uk-text-uppercase">
+                                                       Live streaming
+                                                    </h3>
+                                                    <p>Experience live performances from anywhere in the world.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="uk-panel uk-card uk-card-small uk-radius-medium uk-radius-large@m uk-border uk-box-shadow-xsmall dark:uk-background-white-5 md-2">
+                                            <div class="uk-grid" data-uk-grid="">
+                                                <div class="uk-width-auto">
+                                                    <div class="uk-card uk-card-xsmall uk-radius-medium uk-background-gradient uk-flex-middle uk-flex-center uk-margin-medium-bottom@m">
+                                                        <i class="uk-icon-medium uk-icon-medium@m unicon-model-alt uk-text-gray-10"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-panel uk-width-expand@s">
+                                                    <h3 class="uk-h5 uk-text-uppercase">Social community</h3>
+                                                    <p>Connect with other music enthusiasts and share experiences.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- why us end -->
+
+
+    <!-- about start -->
+    <div id="uni_about" class="uni-about uk-section uk-section-xlarge@m uk-panel reduce-m">
+        <div class="uk-container">
+            <div class="uk-panel uk-margin-medium-top uk-margin-2xlarge-top@m">
+                <div class="uk-grid uk-grid-2xlarge uk-grid-3xlarge@m uk-child-width-1-1" data-uk-grid="">
+                    <div>
+                        <div class="uk-panel">
+                            <div class="uk-grid uk-grid-3xlarge@m uk-flex-middle uk-child-width-1-2@m" data-uk-grid="">
+                                <div>
+                                    <div
+                                        class="uk-panel uk-image-middle uk-overflow-hidden uk-radius uk-radius-large@m">
+                                        <img src="images/singer.png" alt="Create your own NFT">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-panel">
+                                        <span class="uk-text-overline uk-text-gradient">Are you an Artist?</span>
+                                        <h3 class="uk-h3 uk-h1@m uk-text-uppercase">Upload your <span
+                                                class="uk-text-gradient">songs</span></h3>
+                                        <p class="uk-text-large@m"> We provides a level playing field, allowing emerging
+                                            artists to compete with established musicians.</p>
+                                        <a href="#join_discrod"
+                                            class="uk-button uk-button-medium uk-button-large@m uk-button-primary uk-button-outline uk-margin-small-top uk-margin-medium-top@m my-button">
+                                            <span>Sign Up As An Artist</span>
+                                            <!-- <i class="uk-icon uk-text-bold unicon-arrow-right"></i> -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-panel md-2">
+                            <div class="uk-grid uk-grid-3xlarge@m uk-flex-middle uk-child-width-1-2@m" data-uk-grid="">
+                                <div>
+                                    <div
+                                        class="uk-panel uk-image-middle uk-overflow-hidden uk-radius uk-radius-large@m">
+                                        <img src="images/vecteezy_abstract-background-stadium-stage-hall-with-scenic-lights-of_11856239.jpg"
+                                            alt="Create your own NFT">
+                                    </div>
+                                </div>
+                                <div class="uk-flex-first@m">
+                                    <div class="uk-panel">
+                                        <span class="uk-text-overline uk-text-gradient">You've got an event?</span>
+                                        <h3 class="uk-h3 uk-h1@m uk-text-uppercase">List your <span
+                                                class="uk-text-gradient">Events</span></h3>
+                                        <p class="uk-text-large@m">We provide a platform for event organizers to promote
+                                            their events to a wider audience within the web3 ecosystem. </p>
+                                        <a href="#join_discrod"
+                                            class="uk-button uk-button-medium uk-button-large@m uk-button-primary uk-button-outline uk-margin-small-top uk-margin-medium-top@m my-button">
+                                           
+                                            <span>List Event</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- about end -->
+
+                            <!-- Top songs start -->
+                            <div id="uni_collection"
+                                class="uni-collections uk-section uk-section-large@m uk-panel uk-overflow-hidden">
+                                <div class="uk-container">
+                                    <header
+                                        class="uk-grid-xsmall uk-flex-center uk-flex-middle uk-text-center uk-child-width-auto@m uk-grid"
+                                        data-uk-grid>
+                                        <div class="uk-panel">
+                                            <h2 class="uk-h3 uk-h2@s uk-heading-d2@m uk-text-uppercase">
+                                                Top <br>
+                                                <span class="uk-text-gradient">Songs</span>
+                                            </h2>
+                                        </div>
+                                    </header>
+                                    <div class="uk-panel uk-margin-medium-top uk-margin-2xlarge-top@m">
+                                        <div class="uk-grid uk-grid-small@m uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m"
+                                            data-uk-grid="">
+                                            <div>
+                                                <div
+                                                    class="uk-card uk-card-small uk-radius uk-radius-large@m uk-border uk-box-shadow-xsmall dark:uk-background-gray-90 md-2">
+                                                    <div class="uk-panel">
+                                                        <div class="uk-grid uk-grid-xsmall uk-flex-between uk-flex-middle"
+                                                            data-uk-grid="">
+                                                            <div class="uk-width-1-4">
+                                                                <div class="uk-panel">
+                                                                    <canvas width="100" height="100"></canvas>
+                                                                    <img src="images/collections/beyonce.jpeg"
+                                                                        alt="beyonce" class="uk-radius-2xlarge uk-cover"
+                                                                        data-uk-cover="">
+
+                                                                    <span class="uk-position-cover"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="uk-width-expand">
+                                                                <h5 class="uk-h6 uk-h5@m uk-margin-remove"><span
+                                                                        class="uk-link-reset">Brown Skin Girl</span>
+                                                                </h5>
+                                                                <span class="uk-text-small">@beyonce</B></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="uk-panel uk-margin-medium-top">
+                                                            <div class="">
+                                                                <div>
+                                                                    <div
+                                                                        class="uk-panel uk-overflow-hidden uk-radius-small image-container">
+                                                                        <canvas width="400" height="350"></canvas>
+                                                                        <img src="images/collections/brown skin image.jpeg"
+                                                                            alt="Artwork" class="uk-cover"
+                                                                            data-uk-cover="">
+
+
+                                                                        <span href="#" class="uk-position-cover"></span>
+
+                                                                        <audio class="my-audio">
+                                                                            <source src="music/beyonce.MP3"
+                                                                                type="audio/mpeg">
+                                                                        </audio>
+                                                                        <div class="player-controls">
+                                                                            <div class="play-btn audio-button"><i
+                                                                                    class="fa-solid fa-play fa-2xl"
+                                                                                    style="color: #fff;"></i></div>
+                                                                            <div class="pause-btn audio-button"><i
+                                                                                    class="fa-solid fa-pause fa-2xl"
+                                                                                    style="color: #fff;"></i></div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div
+                                                    class="uk-card uk-card-small uk-radius uk-radius-large@m uk-border uk-box-shadow-xsmall dark:uk-background-gray-90 md-2">
+                                                    <div class="uk-panel">
+                                                        <div class="uk-grid uk-grid-xsmall uk-flex-between uk-flex-middle"
+                                                            data-uk-grid="">
+                                                            <div class="uk-width-1-4">
+                                                                <div class="uk-panel">
+                                                                    <canvas width="100" height="100"></canvas>
+                                                                    <img src="images/collections/drake.png"
+                                                                        alt="Artwork" class="uk-radius-2xlarge uk-cover"
+                                                                        data-uk-cover="">
+                                                                    <a href="#" class="uk-position-cover"></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="uk-width-expand">
+                                                                <h5 class="uk-h6 uk-h5@m uk-margin-remove"><a href="#"
+                                                                        class="uk-link-reset">Circo Loco</a></h5>
+                                                                <span class="uk-text-small">@Drake</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="uk-panel uk-margin-medium-top">
+                                                            <div class="">
+                                                                <div>
+                                                                    <div
+                                                                        class="uk-panel uk-overflow-hidden uk-radius-small">
+                                                                        <canvas width="400" height="350"></canvas>
+                                                                        <img src="images/collections/Circo Loco.jpeg"
+                                                                            alt="Artwork" class="uk-cover"
+                                                                            data-uk-cover="">
+                                                                        <a href="#" class="uk-position-cover"></a>
+                                                                        <audio class="my-audio">
+                                                                            <source src="music/Circo Loco.MP3"
+                                                                                type="audio/mpeg">
+                                                                        </audio>
+                                                                        <div class="player-controls">
+                                                                            <div class="play-btn audio-button"><i
+                                                                                    class="fa-solid fa-play fa-2xl"
+                                                                                    style="color: #fff;"></i></div>
+                                                                            <div class="pause-btn audio-button"><i
+                                                                                    class="fa-solid fa-pause fa-2xl"
+                                                                                    style="color: #fff;"></i></div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div
+                                                    class="uk-card uk-card-small uk-radius uk-radius-large@m uk-border uk-box-shadow-xsmall dark:uk-background-gray-90 md-2">
+                                                    <div class="uk-panel">
+                                                        <div class="uk-grid uk-grid-xsmall uk-flex-between uk-flex-middle"
+                                                            data-uk-grid="">
+                                                            <div class="uk-width-1-4">
+                                                                <div class="uk-panel">
+                                                                    <canvas width="100" height="100"></canvas>
+                                                                    <img src="images/collections/Rihanna.png"
+                                                                        alt="Artwork" class="uk-radius-2xlarge uk-cover"
+                                                                        data-uk-cover="">
+                                                                    <span href="#" class="uk-position-cover"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="uk-width-expand">
+                                                                <h5 class="uk-h6 uk-h5@m uk-margin-remove"><span
+                                                                        href="#" class="uk-link-reset"> Lift Me
+                                                                        Up</span></h5>
+                                                                <span class="uk-text-small">@Rihanna</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="uk-panel uk-margin-medium-top">
+                                                            <div class="">
+                                                                <div>
+                                                                    <div
+                                                                        class="uk-panel uk-overflow-hidden uk-radius-small">
+                                                                        <canvas width="400" height="350"></canvas>
+                                                                        <img src="images/collections/Lift Me Up.jpeg"
+                                                                            alt="Artwork" class="uk-cover"
+                                                                            data-uk-cover="">
+                                                                        <span href="#" class="uk-position-cover"></span>
+                                                                        <audio class="my-audio">
+                                                                            <source src="music/rihanna.MP3"
+                                                                                type="audio/mpeg">
+                                                                        </audio>
+                                                                        <div class="player-controls">
+                                                                            <div class="play-btn audio-button"><i
+                                                                                    class="fa-solid fa-play fa-2xl"
+                                                                                    style="color: #fff;"></i></div>
+                                                                            <div class="pause-btn audio-button"><i
+                                                                                    class="fa-solid fa-pause fa-2xl"
+                                                                                    style="color: #fff;"></i></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Top songs end -->
+                            <div>
+
+                            </div>
+</body>
+<script src="js/script.js"></script>
+
+</html>
