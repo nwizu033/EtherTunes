@@ -61,3 +61,20 @@
 } */
 
 .my-button {border-radius: 12px;}
+
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.audio-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* cursor: pointer; */
+}
+
+.pause-btn {
+  display: none;
+}
