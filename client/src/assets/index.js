@@ -6,11 +6,15 @@ import circle3 from "./circle-03.png";
 import dcoin from "./dcoin.png";
 import logo from "./logo.PNG";
 import scale from "./scale-balanced-solid.svg";
+import money from "./money.svg";
+import singer from "./singer.png";
+import stage from "./stage.jpg";
 import users from "./users-solid.svg";
 import music from "./music-solid.svg";
 import video from "./video-solid.svg";
 import calendar from "./calendar-solid.svg";
 import volume from "./volume-high-solid.svg";
+import loader from "./loader.svg";
 import chainide from "./chainideco.png";
 import web3afrika from "./web3afrika.JPG";
 import eventMan from "./event-man.jpeg";
@@ -22,6 +26,10 @@ export {
 	circle3,
 	dcoin,
 	logo,
+	money,
+	singer,
+	stage,
+	loader,
 	chainide,
 	web3afrika,
 	users,

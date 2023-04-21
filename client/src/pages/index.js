@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Partners from "@/components/Partners";
 import WhyUs from "@/components/WhyUs";
 import UpComingEvents from "@/components/UpComingEvents";
+import Artist from "@/components/Artist";
 
 export default function Home() {
 	return (
@@ -14,9 +15,8 @@ export default function Home() {
 				<Partners />
 				<WhyUs />
 				<UpComingEvents />
-				<main className='flex min-h-screen flex-col items-center justify-between p-24'>
-					Landing Page
-				</main>
+				<Artist />
+				{/* <main className='flex min-h-screen flex-col items-center justify-between p-24'></main> */}
 			</div>
 		</>
 	);

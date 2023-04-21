@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ButtonComponent from "./ButtonComponent";
+import { CustomButton } from ".";
 
 const EventCard = ({
 	event_author_id,
@@ -20,17 +20,23 @@ const EventCard = ({
 					className=' rounded-lg w-full '
 				/>
 			</div>
-			<div className=' flex items-end '>
+			<div className='  '>
 				<div>
-					<h1 className=' text-3xl '>{event_name}</h1>
+					<h1 className=' text-2xl md:text-3xl '>{event_name}</h1>
 					<p>{event_venue}</p>
 					<p>{event_date}</p>
 					<p>{event_author_id}</p>
 				</div>
-				<ButtonComponent
-					className=' shrink-0 '
-					type='button'
-					children={"Buy Ticket"}
+
+				<CustomButton
+					btnType='button'
+					title={"Buy Ticket"}
+					// title={address ? "Create a campaign" : "Connect"}
+					// styles={address ? "bg-[#1dc071]" : "bg-[#8c6dfd]"}
+					// handleClick={() => {
+					// 	if (address) navigate("create-campaign");
+					// 	else connect();
+					// }}
 				/>
 			</div>
 		</div>

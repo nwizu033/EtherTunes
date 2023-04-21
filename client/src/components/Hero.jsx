@@ -1,8 +1,7 @@
 import React from "react";
 import AutoPlayVideo from "./AutoPlayVideo";
-import ButtonComponent from "./ButtonComponent";
-import circle1 from "../assets/circle-01.svg";
-import circle2 from "../assets/circle-03.png";
+import { CustomButton } from ".";
+import { circle1, circle2 } from "@/assets";
 import Image from "next/image";
 
 const Hero = () => {
@@ -27,7 +26,16 @@ const Hero = () => {
 				<p className=' text-xl md:text-4xl '>
 					Audio/Video Streaming, Music NFT Marketplace, SocialFi.
 				</p>
-				<ButtonComponent type='submit' children={"Connect Wallet"} />
+				<CustomButton
+					btnType='button'
+					title={"Connect"}
+					// title={address ? "Create a campaign" : "Connect"}
+					// styles={address ? "bg-[#1dc071]" : "bg-[#8c6dfd]"}
+					// handleClick={() => {
+					// 	if (address) navigate("create-campaign");
+					// 	else connect();
+					// }}
+				/>
 			</div>
 			<div className=' w-full'>
 				<AutoPlayVideo src='/videos/video.mp4' className='' />
