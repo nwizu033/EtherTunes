@@ -10,7 +10,6 @@ const CreateEvents = () => {
 	// const { createCampaign } = useStateContext();
 	const [form, setForm] = useState({
 		theme: "",
-		startTime: "",
 		endTime: "",
 		regFee: "",
 		maxAttendee: "",
@@ -55,37 +54,19 @@ const CreateEvents = () => {
 				className='w-full mt-[65px] flex flex-col gap-[30px]'>
 				<div className='flex flex-wrap gap-[40px]'>
 					<FormField
-						labelName='Event Title *'
-						placeholder='Title of the Event'
+						labelName='Event Theme *'
+						placeholder='Theme of the Event'
 						inputType='text'
 						value={form.theme}
-						handleChange={(e) => handleFormFieldChange("title", e)}
-					/>
-				</div>
-
-				{/* <FormField
-					labelName='Details *'
-					placeholder='Write your story'
-					isTextArea
-					value={form.description}
-					handleChange={(e) => handleFormFieldChange("description", e)}
-				/> */}
-
-				<div className='flex flex-wrap gap-[40px]'>
-					<FormField
-						labelName='Start Date *'
-						placeholder='Start Date'
-						inputType='date'
-						value={form.startTime}
-						handleChange={(e) => handleFormFieldChange("startTime", e)}
+						handleChange={(e) => handleFormFieldChange("theme", e)}
 					/>
 
 					<FormField
-						labelName='End Date *'
-						placeholder='End Date'
+						labelName='Registration End Date *'
+						placeholder='Registration End Date'
 						inputType='date'
 						value={form.endTime}
-						handleChange={(e) => handleFormFieldChange("deadline", e)}
+						handleChange={(e) => handleFormFieldChange("endTime", e)}
 					/>
 				</div>
 
@@ -95,14 +76,14 @@ const CreateEvents = () => {
 						placeholder='ETH 0.50'
 						inputType='text'
 						value={form.regFee}
-						handleChange={(e) => handleFormFieldChange("fee", e)}
+						handleChange={(e) => handleFormFieldChange("regFee", e)}
 					/>
 					<FormField
 						labelName='Max Attendee *'
 						placeholder='Max Attendees'
 						inputType='text'
 						value={form.maxAttendee}
-						handleChange={(e) => handleFormFieldChange("deadline", e)}
+						handleChange={(e) => handleFormFieldChange("maxAttendee", e)}
 					/>
 				</div>
 
