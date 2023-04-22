@@ -30,7 +30,7 @@ const EventCard = ({
 					<h1 className=' text-md md:text-xl '>Event Theme: {theme}</h1>
 					<p>Total Ticket Available: {maxAttendees.toString()}</p>
 					{/* <p>{tokenUri}</p> */}
-					<p>End Time: {daysLeft(endTime.toNumber())}</p>
+					<p>End Time: {new Date(endTime.toNumber()).getTime()}</p>
 					<p>{ethers.utils.formatEther(registrationFeeEther.toString())}</p>
 				</div>
 
