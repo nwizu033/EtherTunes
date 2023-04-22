@@ -11,7 +11,7 @@ import { useStateContext } from "@/context";
 const UpComingEvents = ({ title, isLoading, events }) => {
 	const router = useRouter();
 
-	const { currentAccount, seeEvents, connectWallet, shortenAddress } =
+	const { currentAccount, eventList, connectWallet, shortenAddress } =
 		useStateContext();
 
 	// const handleNavigate = (evenT) => {
@@ -21,8 +21,6 @@ const UpComingEvents = ({ title, isLoading, events }) => {
 	const CreateEvent = () => {
 		router.push("./events/CreateEvents");
 	};
-
-
 
 	// 	try {
 	// 		const { ethereum } = window;
@@ -46,7 +44,7 @@ const UpComingEvents = ({ title, isLoading, events }) => {
 	// 		currentAccount.length - 4
 	// 	)}`;
 
-	const [eventList, setEventList] = useState();
+	// const [eventList, setEventList] = useState();
 	const contractAddress = "0x2FB7d59826e80b51120227C41ffF4442D4C4f220";
 
 	return (
@@ -56,6 +54,7 @@ const UpComingEvents = ({ title, isLoading, events }) => {
 					<p className=' text-center bg-gradient-to-tr from-purple-500 to-red-400 bg-clip-text text-transparent  text-4xl'>
 						{title}
 					</p>
+					{/* {} */}
 					{router.pathname != "/" && (
 						<CustomButton
 							btnType='submit'
@@ -90,15 +89,10 @@ const UpComingEvents = ({ title, isLoading, events }) => {
 								handleClick={() => handleNavigate(evenT)}
 							/>
 						))} */}
-
-					<EventCard
-						event_author_id={"0x0000...."}
-						event_name='Davido Live in Lagos'
-						event_date='Date'
-						event_venue='Amphi Venue'
-						event_image={eventMan}
-						eve
-					/>
+					{eventList.length > 0 &&
+						eventList.map((event) => (
+							<EventCard key={event.eventId} {...event} />
+						))}
 
 					{!currentAccount ? (
 						<button
@@ -114,12 +108,14 @@ const UpComingEvents = ({ title, isLoading, events }) => {
 							Conn: {shortenAddress(currentAccount)}
 						</button>
 					)}
+				</div>
 
-					<div>
-						<button onClick={seeEvents} className=' bg-purple-800'>
-							See Event
-						</button>
-					</div>
+				<div>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic fuga
+					laudantium aliquid magnam debitis voluptas dicta exercitationem fugiat
+					aperiam, iusto accusantium adipisci harum cum obcaecati facilis
+					temporibus officia fugit praesentium!
+					<div></div>
 				</div>
 			</div>
 		</div>

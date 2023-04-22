@@ -117,3 +117,23 @@ const CreateEvents = () => {
 };
 
 export default CreateEvents;
+
+
+
+
+			// const parsedEvents = eventList.map((evenT, i) => {
+			// 	title: evenT.theme;
+			// 	// fee: registrationFeeToken;
+			// 	currentAttendee: evenT.currentRegistrants.toString();
+			// 	endTime: evenT.endTime.toNumber();
+			// 	eventId: evenT.eventId.toString();
+			// 	maxAttendees: evenT.maxAttendees.toString();
+			// 	registrationFeeEther: ethers.utils.formatEther(
+			// 		evenT.registrationFeeEther.toString()
+			// 	);
+			// 	// registrationFeeToken: evenT.registrationFeeToken.toString();
+			// });
+
+			// // return parsedEvents;
+			// console.log(parsedEvents);
+			// setEventList(parsedEvents);
