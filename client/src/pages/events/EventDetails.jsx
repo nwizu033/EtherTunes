@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import CountBox from "@/components/CountBox";
-
-import { CountBox, CustomButton, Loader } from "../components";
-import { calculateBarPercentage, daysLeft } from "../utils";
+// import CountBox from "@/components/CountBox";
+// import { useStateContext } from "../context";
+// import { CountBox, CustomButton, Loader } from "../components";
+// import { calculateBarPercentage, daysLeft } from "../utils";
 
 const EventDetails = () => {
   const { state } = useRouter();
 
-  // const { donate, getDonations, contract, address } = useStateContext();
+  // const { donate, getAttendees, contract, address } = useStateContext();
 
 	const [isLoading, setIsLoading] = useState(false);
 	const [amount, setAmount] = useState("");

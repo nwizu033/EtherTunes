@@ -9,7 +9,7 @@ const UpComingEvents = ({ title, isLoading, events }) => {
 	const router = useRouter();
 
 	// const handleNavigate = (evenT) => {
-	// 	router.push(`/EventDetails/${evenT.title}`, { state: evenT });
+	// 	router.push(`/EventDetails/${evenT.eventId}`, { state: evenT });
 	// };
 
 	const CreateEvent = () => {
@@ -66,23 +66,7 @@ const UpComingEvents = ({ title, isLoading, events }) => {
 						event_image={eventMan}
 						eve
 					/>
-					<EventCard
-						event_author_id={"0x0000...."}
-						event_name='Davido Live in Lagos'
-						event_date='Date'
-						event_venue='Amphi Venue'
-						event_image={eventMan}
-						eve
-					/>
-
-					<EventCard
-						event_author_id={"0x0000...."}
-						event_name='Davido Live in Lagos'
-						event_date='Date'
-						event_venue='Amphi Venue'
-						event_image={eventMan}
-						eve
-					/>
+		
 				</div>
 			</div>
 		</div>
