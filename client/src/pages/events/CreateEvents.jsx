@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import { Loader, FormField, CustomButton } from "@/components";
 import { useRouter } from "next/router";
+import { useStateContext } from "@/context";
+import { utils } from "ethers";
 import { money } from "@/assets";
 import Image from "next/image";
 
 const CreateEvents = () => {
+	const [image, setImage] = useState();
+	const [eventName, setEventName] = useState();
+	const [eventDesc, setEventDesc] = useState();
+
 	const navigate = useRouter();
 	const [isLoading, setIsLoading] = useState(false);
-	// const { createCampaign } = useStateContext();
+	const { createEvents } = useStateContext();
+
 	const [form, setForm] = useState({
 		theme: "",
 		endTime: "",
-		regFee: "",
-		maxAttendee: "",
-		tokeUri: "",
+		regFeeEth: "",
+		regFeeETT: "",
+		maxAttendees: "",
+		tokenUri: "",
 		image: "",
 	});
 
@@ -21,13 +29,13 @@ const CreateEvents = () => {
 		setForm({ ...form, [fieldName]: e.target.value });
 	};
 
-	const handleSubmit = async (e) => {
+	const handleImageSubmit = async (e) => {
 		e.preventDefault();
 
 		checkIfImage(form.image, async (exists) => {
 			if (exists) {
 				setIsLoading(true);
-				await createCampaign({
+				await createEvents({
 					...form,
 					target: ethers.utils.parseUnits(form.target, 18),
 				});
@@ -40,6 +48,23 @@ const CreateEvents = () => {
 		});
 	};
 
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		if (true) {
+			setIsLoading(true);
+			await createEvents({
+				...form,
+				regFeeEth: ethers.utils.parseUnits(form.regFeeEth, 18),
+			});
+			setIsLoading(false);
+			navigate("/");
+		} else {
+			alert("Provide valid image URL");
+			setForm({ ...form, image: "" });
+		}
+	};
+
 	return (
 		<div className='bg-[#1c1c24] flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4'>
 			{isLoading && <Loader />}
@@ -47,6 +72,49 @@ const CreateEvents = () => {
 				<h1 className='font-epilogue font-bold sm:text-[25px] text-[18px] leading-[38px] text-white'>
 					List an Event
 				</h1>
+			</div>
+
+			<div className=' w-full'>
+				<form className='w-full mt-[65px] flex flex-col gap-[30px]'>
+					<div className='flex flex-wrap gap-[40px]'>
+						<FormField
+							labelName='Event Theme *'
+							placeholder='Theme of the Event'
+							inputType='text'
+							value={eventName}
+							handleChange={(e) => setEventName(e.target.value)}
+						/>
+					</div>
+
+					<div className='flex flex-wrap gap-[40px]'>
+						<FormField
+							labelName='Event Description *'
+							placeholder='Description of the Event'
+							inputType='text'
+							value={eventDesc}
+							handleChange={(e) => setEventDesc(e.target.value)}
+						/>
+					</div>
+
+					<div className='flex flex-wrap gap-[40px]'>
+						<FormField
+							labelName='Event Image *'
+							placeholder='Place image URL of your event'
+							inputType='url'
+							value={image}
+							handleChange={(e) => setImage(e.target.value)}
+						/>
+					</div>
+
+					<div className='flex justify-center items-center mt-[40px]'>
+						<CustomButton
+							btnType='button'
+							title='Fetch Image URI'
+							styles='bg-[#1dc071]'
+							handleClick={handleImageSubmit}
+						/>
+					</div>
+				</form>
 			</div>
 
 			<form
@@ -72,35 +140,37 @@ const CreateEvents = () => {
 
 				<div className='flex flex-wrap gap-[40px]'>
 					<FormField
-						labelName='Reg Fee *'
+						labelName='Reg Fee in Ehter*'
 						placeholder='ETH 0.50'
 						inputType='text'
-						value={form.regFee}
+						value={form.regFeeEth}
 						handleChange={(e) => handleFormFieldChange("regFee", e)}
 					/>
+
 					<FormField
-						labelName='Max Attendee *'
-						placeholder='Max Attendees'
+						labelName='Reg Fee in Token*'
+						placeholder='ETT 0.50'
 						inputType='text'
-						value={form.maxAttendee}
-						handleChange={(e) => handleFormFieldChange("maxAttendee", e)}
+						value={form.regFeeETT}
+						handleChange={(e) => handleFormFieldChange("regFee", e)}
 					/>
 				</div>
 
 				<div className='flex flex-wrap gap-[40px]'>
+					<FormField
+						labelName='Max Attendee *'
+						placeholder='Max Attendees'
+						inputType='text'
+						value={form.maxAttendees}
+						handleChange={(e) => handleFormFieldChange("maxAttendee", e)}
+					/>
+
 					<FormField
 						labelName='Token Uri *'
 						placeholder='Token Uri'
 						inputType='text'
 						value={form.tokenUri}
 						handleChange={(e) => handleFormFieldChange("deadline", e)}
-					/>
-					<FormField
-						labelName='Event Image *'
-						placeholder='Place image URL of your event'
-						inputType='url'
-						value={form.image}
-						handleChange={(e) => handleFormFieldChange("image", e)}
 					/>
 				</div>
 
@@ -117,23 +187,3 @@ const CreateEvents = () => {
 };
 
 export default CreateEvents;
-
-
-
-
-			// const parsedEvents = eventList.map((evenT, i) => {
-			// 	title: evenT.theme;
-			// 	// fee: registrationFeeToken;
-			// 	currentAttendee: evenT.currentRegistrants.toString();
-			// 	endTime: evenT.endTime.toNumber();
-			// 	eventId: evenT.eventId.toString();
-			// 	maxAttendees: evenT.maxAttendees.toString();
-			// 	registrationFeeEther: ethers.utils.formatEther(
-			// 		evenT.registrationFeeEther.toString()
-			// 	);
-			// 	// registrationFeeToken: evenT.registrationFeeToken.toString();
-			// });
-
-			// // return parsedEvents;
-			// console.log(parsedEvents);
-			// setEventList(parsedEvents);

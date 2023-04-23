@@ -8,12 +8,7 @@ const Events = () => {
 
 	// const { address, contract, getEvents } = useStateContext();
 
-	// const fetchEvents = async () => {
-	// 	setIsLoading(true);
-	// 	const data = await getEvents();
-	// 	setEvents(data);
-	// 	setIsLoading(false);
-	// };
+
 
 	// useEffect(() => {
 	// 	if (contract) fetchEvents();

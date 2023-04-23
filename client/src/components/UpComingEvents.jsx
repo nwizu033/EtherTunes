@@ -14,9 +14,7 @@ const UpComingEvents = ({ title, isLoading, events }) => {
 	const { currentAccount, eventList, connectWallet, shortenAddress } =
 		useStateContext();
 
-	// const handleNavigate = (evenT) => {
-	// 	router.push(`/EventDetails/${evenT.eventId}`, { state: evenT });
-	// };
+
 
 	const CreateEvent = () => {
 		router.push("./events/CreateEvents");
@@ -89,33 +87,13 @@ const UpComingEvents = ({ title, isLoading, events }) => {
 								handleClick={() => handleNavigate(evenT)}
 							/>
 						))} */}
+
+						
 					{eventList.length > 0 &&
 						eventList.map((event) => (
 							<EventCard key={event.eventId} {...event} />
 						))}
 
-					{!currentAccount ? (
-						<button
-							onClick={connectWallet}
-							className='bg-red-500
-						'>
-							Connect Wallet Sure
-						</button>
-					) : (
-						<button
-							className='bg-green-500
-						'>
-							Conn: {shortenAddress(currentAccount)}
-						</button>
-					)}
-				</div>
-
-				<div>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic fuga
-					laudantium aliquid magnam debitis voluptas dicta exercitationem fugiat
-					aperiam, iusto accusantium adipisci harum cum obcaecati facilis
-					temporibus officia fugit praesentium!
-					<div></div>
 				</div>
 			</div>
 		</div>

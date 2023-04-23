@@ -2,8 +2,8 @@ import { ethers } from "ethers";
 import React, { createContext, useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import abi from "./../utils/abi.json";
-import { useAccount } from 'wagmi';
-import { useSigner } from 'wagmi';
+import { useAccount } from "wagmi";
+import { useSigner } from "wagmi";
 
 export const StateContext = createContext();
 
@@ -34,50 +34,37 @@ export const StateContextProvider = ({ children }) => {
 	// 	}
 	// };
 
+	// listing function
+	const [theme, setTheme] = useState();
+	const [endTime, setEndTime] = useState();
+	const [regfeeEth, setRegFeeEth] = useState();
+	const [regfeeETT, setRegFeeETT] = useState();
+	const [maxAttendees, setMaxAttendees] = useState();
+	const [tokenUri, setTokenUri] = useState();
+	const { data: signer, isError, isLoading } = useSigner();
 
-
-
-// listing function
-const [theme, setTheme] = useState();
-const [endTime, setEndTime] = useState();
-const [regfeeEth, setRegFeeEth] = useState();
-const [regfeeETT, setRegFeeETT] = useState();
-const [maxAttendees, setMaxAttendees] = useState();
-const [tokenUri, setTokenUri] = useState();
-const { data: signer, isError, isLoading } = useSigner();
-
-const listEvent = async () => {
-
-	if(signer) {
-    const contract = new ethers.Contract(contractAddress, abi, signer);
-    const listing= await contract.listEvent(
-      theme, endTime, regfeeEth, regfeeETT, maxAttendees, tokenUri
-    );
-   await listing.wait();
-   alert(`event listed:  ${listing.hash}`)
-    // console.log(EventList);
-  
-
-  }else{
-    alert("Please connect wallet");
-  }
-
-}
-
-
-
-
-
-
-
-
-
+	const createEvents = async () => {
+		if (signer) {
+			const contract = new ethers.Contract(contractAddress, abi, signer);
+			const listing = await contract.listEvent(
+				theme,
+				endTime,
+				regfeeEth,
+				regfeeETT,
+				maxAttendees,
+				tokenUri
+			);
+			await listing.wait();
+			alert(`event listed:  ${listing.hash}`);
+			// console.log(EventList);
+		} else {
+			alert("Please connect wallet");
+		}
+	};
 
 
 	useEffect(() => {
 		const seeEvents = async () => {
-		
-
 			if (signer) {
 				const contract = new ethers.Contract(contractAddress, abi, signer);
 				const eventResult = await contract.seeEvents();
@@ -97,6 +84,7 @@ const listEvent = async () => {
 		<StateContext.Provider
 			value={{
 				eventList,
+				createEvents,
 				currentAccount,
 				shortenAddress,
 			}}>
@@ -110,5 +98,3 @@ StateContextProvider.propTypes = {
 };
 
 export const useStateContext = () => useContext(StateContext);
-
-
