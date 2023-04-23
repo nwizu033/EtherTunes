@@ -100,9 +100,9 @@ export const StateContextProvider = ({ children }) => {
 		}
 	};
 
-	if (signer) {
-		seeEvents();
-	}
+	// if (signer) {
+	// 	seeEvents();
+	// }
 
 	const createEvents = async () => {
 		if (signer) {

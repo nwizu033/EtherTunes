@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import UpComingEvents from "@/components/UpComingEvents";
-// import { useStateContext } from "../context";
 
 const Events = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [events, setEvents] = useState([]);
 
-	// const { address, contract, getEvents } = useStateContext();
-
-
-
-	// useEffect(() => {
-	// 	if (contract) fetchEvents();
-	// }, [address, contract]);
 	return (
 		<div className=' px-4 md:px-20'>
 			<UpComingEvents
