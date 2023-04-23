@@ -34,7 +34,7 @@ const Navbar = () => {
 						</div>
 					) : (
 						<div className=' flex items-center ml-auto justify-between '>
-							<div className=' flex ml-auto flex-row space-x-4 '>
+							<div className=' flex mr-20  flex-row space-x-4 '>
 								<Link href={"/"}>Home</Link>
 								<Link href={"/events"}>Events</Link>
 								<Link href={"/nft"}>Music NFT</Link>
@@ -42,17 +42,8 @@ const Navbar = () => {
 								<Link href={"/whitepaper"}>WhitePaper</Link>
 								{/* <Link href={"/team"}>Team</Link> */}
 							</div>
-							<Web3Button/>
-							{/* <CustomButton
-								btnType='button'
-								title={"Connect"}
-								// title={address ? "Create a campaign" : "Connect"}
-								// styles={address ? "bg-[#1dc071]" : "bg-[#8c6dfd]"}
-								// handleClick={() => {
-								// 	if (address) navigate("create-campaign");
-								// 	else connect();
-								// }}
-							/> */}
+							<Web3Button />
+		
 						</div>
 					)}
 				</IconContext.Provider>
@@ -65,11 +56,7 @@ const Navbar = () => {
 							href={"/"}>
 							Home
 						</Link>
-						{/* <Link
-							className=' border-1 border-white hover:cursor-pointer hover:bg-gradient-to-r from-purple-700 rounded-md to-red-300 py-2 w-[90%] '
-							href={"/"}>
-							About
-						</Link> */}
+				
 
 						<Link
 							className=' border-1 border-white hover:cursor-pointer hover:bg-gradient-to-r from-purple-700 rounded-md to-red-300 py-2 w-[90%] '
@@ -87,24 +74,11 @@ const Navbar = () => {
 							href={"/whitepaper"}>
 							WhitePaper
 						</Link>
-						{/* <Link
-							className=' border-1 border-white hover:cursor-pointer hover:bg-gradient-to-r from-purple-700 rounded-md to-red-300 py-2 w-[90%] '
-							href={"/"}>
-							Team
-						</Link> */}
+			
 					</div>
 
 					<div className=' flex justify-center items-center self-center mt-1  '>
-						<CustomButton
-							btnType='button'
-							title={"Connect"}
-							// title={address ? "Create a campaign" : "Connect"}
-							// styles={address ? "bg-[#1dc071]" : "bg-[#8c6dfd]"}
-							// handleClick={() => {
-							// 	if (address) navigate("create-campaign");
-							// 	else connect();
-							// }}
-						/>
+		
 						<Web3Button/>
 					</div>
 				</div>

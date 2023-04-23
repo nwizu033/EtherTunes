@@ -75,7 +75,9 @@ const CreateEvents = () => {
 			</div>
 
 			<div className=' w-full'>
-				<form className='w-full mt-[65px] flex flex-col gap-[30px]'>
+				<form
+					onSubmit={handleImageSubmit}
+					className='w-full mt-[65px] flex flex-col gap-[30px]'>
 					<div className='flex flex-wrap gap-[40px]'>
 						<FormField
 							labelName='Event Theme *'
@@ -101,17 +103,15 @@ const CreateEvents = () => {
 							labelName='Event Image *'
 							placeholder='Place image URL of your event'
 							inputType='url'
-							value={image}
 							handleChange={(e) => setImage(e.target.value)}
 						/>
 					</div>
 
 					<div className='flex justify-center items-center mt-[40px]'>
 						<CustomButton
-							btnType='button'
+							btnType='submit'
 							title='Fetch Image URI'
 							styles='bg-[#1dc071]'
-							handleClick={handleImageSubmit}
 						/>
 					</div>
 				</form>
