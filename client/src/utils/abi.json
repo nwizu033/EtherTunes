@@ -7,7 +7,20 @@
 				"type": "uint256"
 			}
 		],
-		"name": "buyMusic",
+		"name": "buyMusicWithEther",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_musicId",
+				"type": "uint256"
+			}
+		],
+		"name": "buyMusicWithToken",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -64,12 +77,12 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "price",
+				"name": "_etherPrice",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "id",
+				"name": "_tokenPrice",
 				"type": "uint256"
 			},
 			{
@@ -93,7 +106,7 @@
 		],
 		"name": "registerEventWithEther",
 		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -119,6 +132,58 @@
 		],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_eventId",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawEventEther",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_eventId",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawEventToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_musicId",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawMusicEther",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_musicId",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawMusicToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"inputs": [],
@@ -154,25 +219,6 @@
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "eventsArray",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -271,6 +317,16 @@
 						"type": "uint256"
 					},
 					{
+						"internalType": "bool",
+						"name": "withdrawnEther",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "withdrawnToken",
+						"type": "bool"
+					},
+					{
 						"internalType": "string",
 						"name": "TOKEN_URI",
 						"type": "string"
@@ -283,15 +339,75 @@
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "seeMusics",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "musicId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "artist",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "etherPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalEtherRaised",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalTokenRaised",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currentEthers",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currentTokens",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "buyers",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "tokenUri",
+						"type": "string"
+					}
+				],
+				"internalType": "struct EtherTunes.musicCard[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
 ]
-
-
-
-
-
-
-
-
-
-

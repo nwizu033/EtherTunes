@@ -6,6 +6,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 import { CustomButton } from ".";
+import { Web3Button } from "@web3modal/react";
 
 const Navbar = () => {
 	const [showMenu, setShowMenu] = useState(false);
@@ -41,8 +42,8 @@ const Navbar = () => {
 								<Link href={"/whitepaper"}>WhitePaper</Link>
 								{/* <Link href={"/team"}>Team</Link> */}
 							</div>
-
-							<CustomButton
+							<Web3Button/>
+							{/* <CustomButton
 								btnType='button'
 								title={"Connect"}
 								// title={address ? "Create a campaign" : "Connect"}
@@ -51,7 +52,7 @@ const Navbar = () => {
 								// 	if (address) navigate("create-campaign");
 								// 	else connect();
 								// }}
-							/>
+							/> */}
 						</div>
 					)}
 				</IconContext.Provider>
@@ -104,6 +105,7 @@ const Navbar = () => {
 							// 	else connect();
 							// }}
 						/>
+						<Web3Button/>
 					</div>
 				</div>
 			)}
