@@ -2,6 +2,7 @@ import { ethers } from "ethers";
 import React, { createContext, useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import abi from "./../utils/abi.json";
+import tokenAbi from "./../utils/tokenAbi.json";
 import { useAccount } from "wagmi";
 import { useSigner } from "wagmi";
 
