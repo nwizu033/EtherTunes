@@ -14,6 +14,7 @@ const shortenAddress = (currentAccount) =>
 
 export const StateContextProvider = ({ children }) => {
 	const [eventList, setEventList] = useState([]);
+	const [musicList, setMusicList] = useState([]);
 	const contractAddress = "0xb8c04b4d4FF00E1a8E4b7140AF6E213907B3bb10";
 
 	// const connectWallet = async () => {
@@ -88,6 +89,22 @@ const CreateMusic = async () => {
 	  alert("Please connect wallet");
 	}
   }
+
+
+  const seeMusic = async () => {
+	if (signer) {
+		const contract = new ethers.Contract(contractAddress, abi, signer);
+		const musicResult = await contract.seeMusics();
+		setMusicList(musicResult);
+		console.log(musicResult);
+	} else {
+		alert("Please connect wallet");
+	}
+};
+
+if (signer) {
+	seeEvents();
+}
 
 
 
