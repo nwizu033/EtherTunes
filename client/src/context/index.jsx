@@ -44,70 +44,65 @@ export const StateContextProvider = ({ children }) => {
 	// const [tokenUri, setTokenUri] = useState();
 	const { data: signer, isError, isLoading } = useSigner();
 
+	const CreateMusic = async () => {
+		if (signer) {
+			const contract = new ethers.Contract(contractAddress, abi, signer);
+			const listing = await contract.listMusic(
+				title,
+				artist,
+				etherPrice,
+				tokenPrice,
+				tokenUri
+			);
+			await listing.wait();
+			alert(`music listed:  ${listing.hash}`);
+			// console.log(EventList);
+		} else {
+			alert("Please connect wallet");
+		}
+	};
+	const regEventWithEth = async () => {
+		if (signer) {
+			const contract = new ethers.Contract(contractAddress, abi, signer);
+			const registering = await contract.registerEventWithEther(id);
+			await registering.wait();
+			alert(`bought: ${registering.hash}`);
+		} else {
+			alert("Please connect wallet");
+		}
+	};
+	const regEventWithETT = async () => {
+		if (signer) {
+			const tokenContract = new ethers.Contract(tokenAddress, tokenAbi, signer);
+			const approve = await tokenContract.approve(
+				contractAddress,
+				100000 * 1e18
+			);
+			approve.wait();
+			alert("approved, please wait");
+			const contract = new ethers.Contract(contractAddress, abi, signer);
+			const registering = await contract.registerEventWithEther(_eventId);
+			await registering.wait();
+			alert(`bought: ${registering.hash}`);
+		} else {
+			alert("Please connect wallet");
+		}
+	};
 
+	const seeMusic = async () => {
+		if (signer) {
+			const contract = new ethers.Contract(contractAddress, abi, signer);
+			const musicResult = await contract.seeMusics();
+			setMusicList(musicResult);
+			console.log(musicResult);
+		} else {
+			alert("Please connect wallet");
+		}
+	};
 
-const CreateMusic = async () => {
- 
-	if(signer) {
-	  const contract = new ethers.Contract(contractAddress, abi, signer);
-	  const listing= await contract.listMusic(
-		title, artist, etherPrice, tokenPrice, tokenUri
-	  );
-	 await listing.wait();
-	 alert(`music listed:  ${listing.hash}`)
-	  // console.log(EventList);
-	
-	}else{
-	  alert("Please connect wallet");
-	}
-  
-  }
-  const regEventWithEth = async () => {
-  
-	if(signer) {
-	  const contract = new ethers.Contract(contractAddress, abi, signer);
-	  const registering= await contract.registerEventWithEther(id);
-	 await registering.wait();
-	 alert(`bought: ${registering.hash}`)
-	
-	}else{
-	  alert("Please connect wallet");
-	}
-  }
-  const regEventWithETT = async () => {
-  
-	if(signer) {
-	  const tokenContract = new ethers.Contract(tokenAddress, tokenAbi,signer);
-	  const approve = await tokenContract.approve(contractAddress,(100000*1e18));
-	  approve.wait();
-	  alert("approved, please wait");
-	  const contract = new ethers.Contract(contractAddress, abi, signer);
-	  const registering= await contract.registerEventWithEther(_eventId);
-	 await registering.wait();
-	 alert(`bought: ${registering.hash}`)
-	
-	}else{
-	  alert("Please connect wallet");
-	}
-  }
-
-
-  const seeMusic = async () => {
 	if (signer) {
-		const contract = new ethers.Contract(contractAddress, abi, signer);
-		const musicResult = await contract.seeMusics();
-		setMusicList(musicResult);
-		console.log(musicResult);
-	} else {
-		alert("Please connect wallet");
+		seeEvents();
 	}
-};
-
-if (signer) {
-	seeEvents();
-}
-
-
 
 	const createEvents = async () => {
 		if (signer) {
@@ -127,7 +122,6 @@ if (signer) {
 			alert("Please connect wallet");
 		}
 	};
-
 
 	useEffect(() => {
 		const seeEvents = async () => {
@@ -151,7 +145,7 @@ if (signer) {
 			value={{
 				eventList,
 				createEvents,
-				signer
+				signer,
 			}}>
 			{children}
 		</StateContext.Provider>
