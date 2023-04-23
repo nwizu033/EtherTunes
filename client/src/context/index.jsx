@@ -89,16 +89,16 @@ export const StateContextProvider = ({ children }) => {
 		}
 	};
 
-	const seeMusic = async () => {
-		if (signer) {
-			const contract = new ethers.Contract(contractAddress, abi, signer);
-			const musicResult = await contract.seeMusics();
-			setMusicList(musicResult);
-			console.log(musicResult);
-		} else {
-			alert("Please connect wallet");
-		}
-	};
+	// const seeMusic = async () => {
+	// 	if (signer) {
+	// 		const contract = new ethers.Contract(contractAddress, abi, signer);
+	// 		const musicResult = await contract.seeMusics();
+	// 		setMusicList(musicResult);
+	// 		console.log(musicResult);
+	// 	} else {
+	// 		alert("Please connect wallet");
+	// 	}
+	// };
 
 	// if (signer) {
 	// 	seeEvents();
@@ -135,8 +135,20 @@ export const StateContextProvider = ({ children }) => {
 			}
 		};
 
+		const seeMusic = async () => {
+			if (signer) {
+				const contract = new ethers.Contract(contractAddress, abi, signer);
+				const musicResult = await contract.seeMusics();
+				setMusicList(musicResult);
+				console.log(musicResult);
+			} else {
+				alert("Please connect wallet");
+			}
+		};
+
 		if (signer) {
 			seeEvents();
+			seeMusic();
 		}
 	}, [signer]);
 
@@ -145,6 +157,7 @@ export const StateContextProvider = ({ children }) => {
 			value={{
 				eventList,
 				createEvents,
+				musicList,
 				signer,
 			}}>
 			{children}

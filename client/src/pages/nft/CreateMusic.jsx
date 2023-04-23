@@ -6,7 +6,7 @@ import { utils } from "ethers";
 import { money } from "@/assets";
 import Image from "next/image";
 
-const CreateEvents = () => {
+const CreateMusic = () => {
 	const [image, setImage] = useState();
 	const [eventName, setEventName] = useState();
 	const [eventDesc, setEventDesc] = useState();
@@ -243,4 +243,4 @@ async function uploadJson(e) {
 	);
 };
 
-export default CreateEvents;
+export default CreateMusic;
