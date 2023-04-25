@@ -40,29 +40,7 @@ const UpComingEvents = ({ title, isLoading, events }) => {
 				</div>
 
 				<div className=' gap-4 grid md:grid-cols-3'>
-					{/* {isLoading && (
-						<img
-							src={loader}
-							alt='loader'
-							className='w-[100px] h-[100px] object-contain'
-						/>
-					)}
-
-					{!isLoading && events.length === 0 && (
-						<p className='font-epilogue font-semibold text-[14px] leading-[30px] text-[#818183]'>
-							You have not created any event yet
-						</p>
-					)}
-
-					{!isLoading &&
-						campaigns.length > 0 &&
-						campaigns.map((campaign) => (
-							<EventCard
-								key={evenT.id}
-								{...evenT}
-								handleClick={() => handleNavigate(evenT)}
-							/>
-						))} */}
+				
 
 						
 					{eventList.length > 0 &&
