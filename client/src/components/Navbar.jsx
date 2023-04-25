@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import logo from "../assets/logo.PNG";
+import logo from "../../public/logo.PNG";
 import { IconContext } from "react-icons";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
